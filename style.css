@@ -5,6 +5,7 @@ CSS Reset
 */
 :root {
 	color-scheme: light dark;
+	--light-gradient: linear-gradient(to right, #8f1e18, #e79529, #35ea35);
 }
 * {
 	box-sizing: border-box;
@@ -19,11 +20,11 @@ body {
 img,
 picture,
 video,
-canvas,
-svg {
+canvas {
 	display: block;
 	max-width: 100%;
 }
+
 /*
 
 /*
@@ -70,19 +71,19 @@ body {
 }
 
 h1 {
-	font-size: 65px;
+	font-size: 38px;
 	font-family: "VT323", monospace;
 	font-weight: 600;
 }
 
 h4 {
-	font-size: 22px;
+	font-size: 18px;
 	font-family: "Henny Penny", system-ui;
 	font-weight: 700;
 }
 
 footer p {
-	font-size: 11px;
+	font-size: 14px;
 	font-family: "Henny Penny", system-ui;
 }
 
@@ -113,7 +114,7 @@ body {
 }
 
 main {
-	/* border: 2px solid saddlebrown;  */
+	/* border: 2px solid saddlebrown; */
 	height: 75vh;
 	display: flex;
 	flex-direction: column;
@@ -121,7 +122,7 @@ main {
 }
 
 .main-section {
-	/* border: 2px solid magenta;  */
+	/* border: 2px solid magenta;    */
 
 	width: 100%;
 	height: 50vh;
@@ -139,7 +140,7 @@ main {
 	justify-content: space-evenly;
 }
 .image-wrapper {
-	width: 110px;
+	width: 90px;
 	/* border: 2px solid pink; */
 }
 
@@ -147,15 +148,8 @@ main {
 	width: 100%;
 }
 
-h1 {
-}
-
 footer {
 	text-align: center;
-}
-
-svg{
-	display: none;
 }
 
 /*
@@ -170,21 +164,25 @@ COLORS
 */
 
 body {
-	background-color: light-dark(#f8f1db, #333);
+	background-color: light-dark(#fff, #333);
 }
 
 h1 {
-	color: light-dark(#8f1e18, #35ea35);
+	color: light-dark(#e79529, #35ea35);
 }
 h4 {
-	color: light-dark(#c4887a, #debdab);
+	color: light-dark(#5c505c, #f8f1db);
 }
 
 button {
 	background-color: transparent;
 }
 footer p {
-	color: light-dark(#aa5349, #f8f1db);
+	background: var(--light-gradient);
+	background-size: cover;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
 }
 
 .dark-mode {
@@ -216,6 +214,40 @@ LARGE SCREENS
 =====================================
 */
 
+@media only screen and (min-width: 375px) {
+	h1 {
+		font-size: 48px;
+	}
+
+	h4 {
+		font-size: 20px;
+	}
+
+	footer p {
+		font-size: 10px;
+	}
+
+	.main-section {
+		gap: 50px;
+	}
+}
+
+@media only screen and (min-width: 425px) {
+	.player1-winIcon {
+		top: 106px;
+		left: 40px;
+		width: 30px;
+		height: 30px;
+	}
+
+	.player2-winIcon {
+		top: 106px;
+		right: 45px;
+		width: 30px;
+		height: 30px;
+	}
+}
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 	h1 {
@@ -235,7 +267,7 @@ LARGE SCREENS
 	}
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Extra large devices (large laptops and desktops, 1024px and up) */
 @media only screen and (min-width: 1024px) {
 	h1 {
 		font-size: 120px;
@@ -246,7 +278,34 @@ LARGE SCREENS
 	}
 
 	footer p {
+		margin-top: 50px;
 		font-size: 14px;
+	}
+
+	.main-section {
+		gap: 65px;
+	}
+
+	.image-wrapper {
+		width: 200px;
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+	h1 {
+		font-size: 160px;
+	}
+
+	h4 {
+		font-size: 32px;
+	}
+
+	footer p {
+		font-size: 18px;
+	}
+
+	.image-wrapper {
+		width: 255px;
 	}
 
 	.main-section {
